@@ -1,0 +1,48 @@
+<p>
+  welcome {{name}}
+  <br>
+  <span [class] = 'successClass'>Dummy text</span>
+  <br>
+  <input type = 'text' value = '' name = 'textbox1' [disabled] = 'textBoxDisabled'>
+  <br>
+  <button name = "msgButton" (click) = "onClick($event)"> Show Message </button>
+  <br>
+  <br>
+  <input type="text" name = "templateReferenceVariables" #reference>
+  <button (click)="logInput(reference.value)">Log Input</button>
+  <br>
+  <br>
+  <input type = "text" [(ngModel)] = "textBoxValue">
+  {{textBoxValue}}
+
+  <br>
+  <br>
+  <label *ngIf = "showTheLabel">This is a Label</label>
+
+
+  <br>
+  <br>
+  <div [ngSwitch]="color">
+    <span *ngSwitchCase="'red'">Color Red selected</span>
+    <span *ngSwitchCase="'green'">Color Green selected</span>
+    <span *ngSwitchCase="'blue'">Color Blue selected</span>
+    <span *ngSwitchDefault>No color selected</span>
+  </div>
+
+  <br>
+  <br>
+
+  <ul>
+    <li *ngFor="let color of colors">
+      {{ color }}
+    </li>
+  </ul>
+
+  <br>
+  <br>
+  {{dataFromParent}}
+
+  <br>
+  <button (click) = 'fireEvent()'>Fire Event</button>
+
+
